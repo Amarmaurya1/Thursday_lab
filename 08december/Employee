@@ -1,0 +1,51 @@
+/*Write a program to create a process which will store the employee
+ * details and calculate the employee gross Salary and net salary.
+ * (using inheritance)
+ */
+package inheritance;
+
+import java.util.Scanner;
+
+public class accept_empdetails
+{    Scanner sc=new Scanner(System.in);
+	String emp_name,emp_Id;   //declaring variables
+	int gross_salary,net_salary;
+	long contact_no;
+	 public void details()     //getting input from user
+	 {   System.out.println("Enter the Empolyee details:");
+		 System.out.println("Enter the Employee name:");
+		 emp_name=sc.next();
+		 System.out.println("Enter the EmployeeId:");
+		 emp_Id=sc.next();
+		 System.out.println("Enter Your contact Number:");
+		 contact_no=sc.nextLong();
+		 System.out.println("Enter the  gross Salary is:");
+		 gross_salary=sc.nextInt();
+	 }
+}
+
+________________________________
+
+
+package inheritance;
+
+public class Empsalary extends accept_empdetails{  //Inheriting accept_empdetails
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Empsalary obj=new Empsalary();  //object creation
+		 obj.Salary_calc();      //invoking Salary_calc
+	}
+	
+    public void Salary_calc()   //Calculation
+    {
+    details();
+    System.out.println("hi!"+emp_name);
+   int CTC=(gross_salary*100)/25;
+   net_salary=CTC-gross_salary;
+  
+   System.out.println("Your details is: ");
+   System.out.println("Your is:"+CTC);
+   System.out.println("Net salary is:"+net_salary);
+   }
+}
