@@ -1,0 +1,84 @@
+/* Write a program to accept Student details from the user and calculate the result and display the output abstraction
+*/
+package abstraction;
+
+import java.util.Scanner;
+
+public abstract class abs_Demo 
+{
+	int roll_no,i;
+	String name;
+	int[] marks=new int[5];
+	Scanner sc=new Scanner(System.in);
+	public abstract void calc();
+	
+	public void accept()
+	{
+		System.out.println("Enter your name");
+		name=sc.next();
+		System.out.println("Enter your roll_no");
+		roll_no=sc.nextInt();
+		System.out.println("Enter marks of five subject");
+
+		for(i=0;i<5;i++)
+		{
+			marks[i]=sc.nextInt();
+		}
+	}
+}
+
+-------------------------------------
+
+
+package abstraction;
+
+public class Student extends abs_Demo implements grade_cal
+{
+ public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Student obj=new Student();
+       obj.accept();
+       obj.calc();
+}
+    public void demo()
+    {
+	 
+    }
+	public void calc() {
+		// TODO Auto-generated method stub
+		int total=0;
+		 
+		for(i=0;i<5;i++)
+		{
+			total+=marks[i];
+		}
+		System.out.println("The total out of 500:"+total);
+		int per=(total*100)/500;
+		System.out.println("Your percentage is:"+per+"%");
+		grade(per);
+	}
+	//@Override
+	
+	public void grade(int per) {
+		// TODO Auto-generated method stub
+		if(per>=90 && per<=100)
+		{
+			System.out.println("O Grade");    //if Percentage is between 90 to 100 then Print O Grade
+		}
+		else if(per>=70 && per<89)
+		{
+			System.out.println("A Grade");   //if Percentage is between 70 to 89  then Print  A Grade 
+		}
+		else if(per>=50 && per<69)
+		{
+			System.out.println("B Grade");   //if Percentage is between 50 to 69  then Print  B Grade 
+		}
+		else if(per>=35 && per<49)
+		{
+			System.out.println("C Grade");    //if Percentage is between 35 to  then Print
+	}
+	
+   
+}
+}
+
