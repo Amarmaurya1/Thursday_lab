@@ -1,0 +1,73 @@
+/*Write A program to create an user defined exception 
+ * for the grade of a student. */
+package Exceptions;
+
+public class Myexception extends Exception {
+	public Myexception(String msg)
+	{
+		super(msg);
+	}
+
+}
+
+--------------------------------------------------------------------------
+
+package Exceptions;
+
+import java.util.Scanner;
+
+public class Student_grade {
+	 Scanner sc=new Scanner(System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student_grade obj=new Student_grade();             //object creation 
+		try {                            //try block
+		obj.grade();                //Invoking grade();
+	    }
+		catch(Myexception e)              //catch block
+		{
+		  System.out.println(e.getMessage());
+		}
+		}
+    public void  grade()throws Myexception              //handling exception by using throws keyword
+    {  try {                                        //try block
+    	int marks[]=new int[5];
+    	int total_marks = 0,per;
+    	System.out.println("Enter the student name");
+    	String Studentname=sc.next();
+    	System.out.println("Enter the Rollno");
+    	int Rollno=sc.nextInt();
+    	if(Rollno>50||Rollno<1)             //condition
+    	{
+    		throw new Myexception("Rollno has to be in between 1 to 50");   //throw statement
+    	}
+    	System.out.println("Enter  "+Studentname+"  Marks");
+    	for(int i=0;i<5;i++)                            //for loop 
+    	{    
+    		 marks[i]=sc.nextInt();                        
+    		 total_marks+=marks[i];    		             //calculation
+    	}
+    	System.out.println("Your total Marks out of 500 is:"+total_marks);
+    	per=(total_marks*100)/500;                       //Percentage
+    	System.out.println("Your Percentage is:"+per+"%");
+    	if(per>100)                                // Nested if condition
+    	{
+    		throw new Myexception("The Percentage should not be greater than 100%");   //throw
+    	}
+    	else if(per>=35)                          //else if condition
+    	{
+    		System.out.println("Pass👍");
+    	}
+    	else if(per<35)                           //else if condition
+    	{                                         
+    		System.out.println("fail😓");
+    	}
+    	
+    }
+    	finally                 //finally block 
+    	{
+    		System.out.println("End");
+    	}  
+    }
+}
