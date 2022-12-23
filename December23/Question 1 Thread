@@ -1,0 +1,40 @@
+/*1. Write a program that creates 2 threads - each displaying a message 
+(Pass the message as a parameter to the constructor). The threads should
+display the messages continuously 
+till the user presses any key.*/
+package Threading;
+
+public class First extends Thread{
+  String msg="";
+  First(String msg)//Parameterized constructor
+  {
+	  this.msg=msg;
+  }
+  public void run()
+  {
+	  try {
+		  while(true) {
+			  System.out.println(msg);
+			  Thread.sleep(400); //Sleeping the thread		  }
+	  }
+  }
+	  catch(Exception e) {
+		  e.printStackTrace();
+	  }
+	  
+}
+}
+--------------------------------------------------
+
+package Threading;
+
+public class Q1st extends Thread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		First obj=new First("Hiii");//passing Argument to the Constructor
+	     obj.start();
+	}
+
+}
+
