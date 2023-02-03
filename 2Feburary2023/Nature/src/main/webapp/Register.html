@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head><script src="https://kit.fontawesome.com/e000e8562b.js" crossorigin="anonymous"></script>
+
+<meta charset="UTF-8">
+<style type="text/css">
+*{
+	box_sizing:border-box;
+}
+body {
+  background-image:url("Image/evie-s-bSVGnUCk4tk-unsplash.jpg");  
+ 
+}
+#Nature{
+	color:Red;
+	font-family:cursive;
+	float:left;
+	
+}
+ul{
+	
+	list-style-type:none;
+	margin:0;
+	height:1cm;
+	overflow:hidden;
+}
+
+
+li{
+	display:inline;
+	float:right;
+   }
+
+li a{
+	  padding: 14px 16px;
+      color: black;
+      text-decoration: none;
+      text-align: center;
+ }	
+ li :hover
+{
+	background-color: #28B463;
+  color: white;
+ 
+}
+.abc{
+	
+	color:aqua;
+    text-align: center;
+    font-family:'Oswald',cursive;
+    font-size: 1cm;
+    
+}
+.form{
+	height:12cm;
+	width:9cm;
+	border:10px;
+	color:black;
+	font-style:inherit;
+	margin-inline:auto;
+	text-align: center;
+	padding-top: 3cm;
+	
+}
+</style>
+<title>My Page</title>
+</head>
+<body>
+<ul>
+<li id="Nature";>Nature!<i class="fa-solid fa-leaf-maple"></i>
+<li><a href=""><i class="fa-solid fa-house"></i> Home</a> 
+<li><a href="">contact</a>
+<li><a href="">Feedback</a>
+<li><a href="Login.jsp">Login</a>
+<li style ="float:right;"><a href="About.html">About</a>
+</ul>
+<div class="abc">
+<h1>Register on Nature</h1>
+</div>
+<div class="form">
+<form action="Register" method="post">
+<label for=" Details">Enter Your Details:</label><br>
+<label for=" firstname">First name:</label><br>
+<input type="text" id="firstname" Name="firstname"><br>
+<label for="lastname">Last name:</label><br>
+<input type="text" id="lastname" Name="lastname"><br>
+<label for="Gender">Gender</label><br>
+<input type="radio" id="Male" name="Gender" Value="Male">
+<label for="Male">Male</label><br>
+<input type="radio" id="Female" name="Gender" Value="Female">
+<label for="Female">Female</label><br>
+<label for="Number">Contact Number:</label><br>
+<input type="text" id="Contact" Name="Contact"><br>
+<label for="email">E-mail:</label><br>
+<input type="email" id="email" Name="email"><br>
+<label for="Password">Create Your Password:</label><br>
+<input type="password" id="Password" Name="Password"><br>
+<label for="Password">Confirm Your Password:</label><br>
+<input type="password" id="RePassword" Name="rePassword"><br>
+ <input type="submit" name="submit" value="submit"><br>
+</form>
+ </div>
+</body>
+</html>
