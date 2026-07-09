@@ -1,5 +1,5 @@
 /*WAP to accept back name, AC NO, Name , Pin no , amount for D or C. End display the Details . AS Name, bank name,Final balance.
-*/test
+*/
 
 
 import java.util.Scanner;
